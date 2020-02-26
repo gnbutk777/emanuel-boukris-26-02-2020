@@ -3,13 +3,20 @@ import React from "react";
 
 import Router from './router';
 import Navbar from "./component/Navbar";
+import { Provider } from 'react-redux';
+import store from './redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 function App() {
   return (
-    <Router
-      Header={<Navbar/>}
-    />
+    <Provider store={store}>
+      <Router
+        Header={<Navbar/>}
+      />
+      </Provider>
   );
 }
 

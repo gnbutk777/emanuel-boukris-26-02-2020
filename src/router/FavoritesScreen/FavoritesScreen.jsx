@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 
 const FavoritesScreen = () => {
     return (
@@ -7,4 +7,4 @@ const FavoritesScreen = () => {
     )
 }
  
-export default FavoritesScreen;
+export default connect()(FavoritesScreen);

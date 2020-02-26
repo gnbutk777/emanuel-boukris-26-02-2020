@@ -1,15 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {addToFavorites, removeFormFavorites} from './../../modules/favorites/actions'; 
 
 
-
-
-const HomeScreen = () => {
-    console.log('====================================');
-    console.log("HOMEESCREEN");
-    console.log('====================================');
+const HomeScreen = (props) => {
     return (
-        <h2>Home</h2>
+        <h2 onClick={() => {props.addToFavorites("test")}}>Home</h2>
     )
 }
  
-export default HomeScreen;
+const mapStateToProps = state => {
+    return {
+        favorites: state.favorites
+    };
+};
+
+const mapDispatchToProps = {
+    addToFavorites,
+    removeFormFavorites,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
