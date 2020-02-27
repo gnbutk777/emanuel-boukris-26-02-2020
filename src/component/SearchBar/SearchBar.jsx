@@ -11,12 +11,12 @@ const SearchBar = ({onSelectCity}) => {
     const [value, setvalue] = useState('');
      const debouncedSearchTerm = useDebounce(value, 250);
 
-     const getCity = async (oldValue, signal) => {
+     const getCities = async (oldValue, signal) => {
         try {
-            const cities = await api.getCity(oldValue, {signal});
+            const cities = await api.getCities(oldValue, {signal});
             const mapCities = cities.map((city) => {
-                const {LocalizedName, key} = city;
-                return {name: LocalizedName, key: key};
+                const {LocalizedName, Key} = city;
+                return {name: LocalizedName, key: Key};
             })
             setoptions(mapCities);
         }
@@ -35,7 +35,7 @@ const SearchBar = ({onSelectCity}) => {
         const signal = controller.signal;
 
          if (debouncedSearchTerm) {
-            getCity(debouncedSearchTerm, signal);
+            getCities(debouncedSearchTerm, signal);
         }
         else {
             setoptions([]);

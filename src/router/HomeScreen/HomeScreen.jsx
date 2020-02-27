@@ -1,21 +1,30 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import {addToFavorites, removeFormFavorites} from './../../modules/favorites/actions'; 
-// import { Container } from 'react-bootstrap/lib/Tab';
 import Container from 'react-bootstrap/Container';
 import SearchBar from '../../component/SearchBar';
+import HomeCard from '../../component/HomeCard';
 
+
+const mockCity = {name: 'tel-aviv', key: '4443434'}
 
 const HomeScreen = (props) => {
-    const [selectedCity, setselectedCity] = useState({});
+    //FIXME:
+    // const [selectedCity, setselectedCity] = useState(null);
+    const [selectedCity, setselectedCity] = useState(mockCity);
     return (
         <Container>
             <SearchBar onSelectCity={(city) => {
-                console.log('====================================');
-                console.log("city = ",city);
-                console.log('====================================');
-                setselectedCity(city);
+                if (city.length > 0) {
+                    setselectedCity(city[0]);
+                }
             }}/>
+            {
+                selectedCity ?
+                <HomeCard selectedCity={selectedCity} />
+                :
+                null
+            }
         </Container>
     )
 }

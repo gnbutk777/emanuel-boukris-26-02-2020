@@ -3,13 +3,20 @@ import {weatherApi} from './weatherConfig';
 
 const {baseUrl, apiKey } = weatherApi;
 
+const locaCityUrl = "/locations/v1/cities/autocomplete";
+
 export default {
-    getCity: () => {
-        return [{LocalizedName: 'tel-aviv', key: '4445'}]
+    //FIXME:
+    getCities: () => {
+        return [
+            {LocalizedName: 'tel-aviv', Key: '215854'},
+            {LocalizedName: 'Telanaipura', Key: '3431644'},
+            {LocalizedName: 'Telford', Key: '325876'},
+        ]
     }
-    // getCity: (cityName, {signal}) => {
+    // getCities: (cityName, {signal}) => {
     //     return fetch(
-    //         `${baseUrl}/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${cityName}`,
+    //         `${baseUrl}${locaCityUrl}?apikey=${apiKey}&q=${cityName}`,
     //         {signal})
     //     .then(response => response.json())
     //     .then(json => json);
