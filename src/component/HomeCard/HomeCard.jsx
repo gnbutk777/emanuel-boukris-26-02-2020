@@ -10,13 +10,11 @@ const HomeCard = ({selectedCity}) => {
     return ( 
         <Container>
             <Card>
-                <Row className="flex-column-reverse flex-sm-row align-items-start m-2">
+                <Row className="flex-column-reverse flex-sm-row m-2">
                     <SelectdCityCard selectedCity={selectedCity}/>
-                    <FavoritesButton selectedCthityKey={selectedCity.key}/>
+                    <FavoritesButton selectedCityKey={selectedCity.key}/>
                 </Row>
-                <Row>
-                    <WeekSumCard/>
-                </Row>
+                <WeekSumCard selectedCityKey={selectedCity.key}/>
             </Card>
         </Container>
      );

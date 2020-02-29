@@ -6,12 +6,12 @@ import SearchBar from '../../component/SearchBar';
 import HomeCard from '../../component/HomeCard';
 
 
-const mockCity = {name: 'tel-aviv', key: '4443434'}
+const defaultCity = {name: 'tel-aviv', key: '215854'}
 
 const HomeScreen = (props) => {
     //FIXME:
     // const [selectedCity, setselectedCity] = useState(null);
-    const [selectedCity, setselectedCity] = useState(mockCity);
+    const [selectedCity, setselectedCity] = useState(defaultCity);
     return (
         <Container>
             <SearchBar onSelectCity={(city) => {

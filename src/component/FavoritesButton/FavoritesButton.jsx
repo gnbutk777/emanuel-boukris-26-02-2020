@@ -9,7 +9,7 @@ const text = {
     remove: "Remove From Favorites"
 }
 
-const FavoritesButton = ({selectedCityKey, addToFavorites, removeFormFavorites}) => {
+const FavoritesButton = ({selectedCityKey, addCityToFavorites, removeCityFormFavorites}) => {
     const isFill = useSelector((state) => {
         const {favorites} = state;
         
@@ -18,15 +18,15 @@ const FavoritesButton = ({selectedCityKey, addToFavorites, removeFormFavorites})
 
     const handlePress = () => {
         if (isFill) {
-            removeFormFavorites(selectedCityKey)
+            removeCityFormFavorites(selectedCityKey)
         }
         else {
-            addToFavorites(selectedCityKey);
+            addCityToFavorites(selectedCityKey);
         }
     }
 
     return (
-        <Col className="d-flex justify-content-center justify-content-sm-end">
+        <Col className="d-flex align-items-start justify-content-center justify-content-sm-end">
             <ButtonGroup>
                 <FavHeartIcon isFill={isFill}/>
                 <Button onClick={handlePress} variant="primary">
@@ -44,8 +44,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addToFavorites,
-    removeFormFavorites,
+    addCityToFavorites: addToFavorites,
+    removeCityFormFavorites: removeFormFavorites,
 };
  
 export default connect(mapStateToProps, mapDispatchToProps)(FavoritesButton);;

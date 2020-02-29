@@ -34,8 +34,8 @@ const SelectdCityCard = ({selectedCity}) => {
         const controller = new AbortController();
         const signal = controller.signal;
 
-        getCurrConditions(key, signal);
         setisLoading(true);
+        getCurrConditions(key, signal);
 
         return () => {
             controller.abort();
@@ -52,7 +52,7 @@ const SelectdCityCard = ({selectedCity}) => {
                         <Spinner animation="border" size="sm" />
                         :
                         <Card.Text>
-                            {celsius}˚C
+                            {Math.round(celsius)}˚C
                         </Card.Text>
                     }
                 </Card.Body>
