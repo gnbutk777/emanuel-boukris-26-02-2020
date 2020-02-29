@@ -7,30 +7,30 @@ describe('favorites Reducer', () => {
         expect(favoritesReducer(undefined, {})).toEqual({favorites: []})
     });
     it('should handle REMOVE_FROM_FAVORITES', () => {
-        expect(favoritesReducer({favorites: [15]}, {
+        expect(favoritesReducer({favorites: [{id:2453, name: "tena"}]}, {
             type: actionsType.REMOVE_FROM_FAVORITES,
-            payload: 15      
+            payload: 2453
         })
         ).toEqual({favorites: []});
-        expect(favoritesReducer({favorites: [15]}, {
+        expect(favoritesReducer({favorites: [{id:2453, name: "tena"}]}, {
             type: actionsType.REMOVE_FROM_FAVORITES,
             payload: 25      
         })
-        ).toEqual({favorites: [15]})
+        ).toEqual({favorites: [{id:2453, name: "tena"}]})
     });
     it('should handle ADD_TO_FAVORITES', () => {
         expect(
             favoritesReducer(undefined, {
             type: actionsType.ADD_TO_FAVORITES,
-            payload: 25
+            payload: {id:2453, name: "tena"}
         })
-        ).toEqual({favorites: [25]});
+        ).toEqual({favorites: [{id:2453, name: "tena"}]});
         expect(
-            favoritesReducer({favorites: [15,12,15,55444]}, {
+            favoritesReducer({favorites: [{id:2453, name: "tena"},{id:2452, name: "tamar"}]}, {
                 type: actionsType.ADD_TO_FAVORITES,
-                payload: 35     
+                payload: {id:2451, name: "telAviv"} 
             })
-        ).toEqual({favorites: [15,12,15,55444, 35]});
+        ).toEqual({favorites: [{id:2453, name: "tena"}, {id:2452, name: "tamar"}, {id:2451, name: "telAviv"}]});
         expect(
             favoritesReducer({favorites: []}, {
                 type: actionsType.ADD_TO_FAVORITES,

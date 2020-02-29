@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
-
 
 
 const OneDayForcast = ({day, temperature, isLoading}) => {

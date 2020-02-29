@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import Row from 'react-bootstrap/Row';
-// import OneDayForcast from '../OneDayForcast';
-import OneDayForcast from '../../component/OneDayForcast';
+import FavoriteSingleCard from '../../component/FavoriteSingleCard';
 
 const FavoritesScreen = ({favorites}) => {
     const [isLoading, setisLoading] = useState(true);
@@ -15,7 +14,7 @@ const FavoritesScreen = ({favorites}) => {
                 favorites.map((oneDayData, index)=> {
                     const {day, temperature} = oneDayData;
                     // const key = selectedCityKey + index;
-                    return <OneDayForcast key={index} isLoading={isLoading} day={day} temperature={temperature}/>
+                    return <FavoriteSingleCard key={index} isLoading={isLoading} day={day} temperature={temperature}/>
                 })
             }       
         </Row>
