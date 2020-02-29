@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/emanuel-boukris-26-02-2020/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/emanuel-boukris-26-02-2020/static/js/main.4f173fbc.chunk.js",
+    "main.js.map": "/emanuel-boukris-26-02-2020/static/js/main.4f173fbc.chunk.js.map",
+    "runtime-main.js": "/emanuel-boukris-26-02-2020/static/js/runtime-main.6e583ef6.js",
+    "runtime-main.js.map": "/emanuel-boukris-26-02-2020/static/js/runtime-main.6e583ef6.js.map",
+    "static/css/2.38c9a507.chunk.css": "/emanuel-boukris-26-02-2020/static/css/2.38c9a507.chunk.css",
+    "static/js/2.05d2d477.chunk.js": "/emanuel-boukris-26-02-2020/static/js/2.05d2d477.chunk.js",
+    "static/js/2.05d2d477.chunk.js.map": "/emanuel-boukris-26-02-2020/static/js/2.05d2d477.chunk.js.map",
+    "index.html": "/emanuel-boukris-26-02-2020/index.html",
+    "precache-manifest.58e3e90f1b4a2465d21f83a153379c97.js": "/emanuel-boukris-26-02-2020/precache-manifest.58e3e90f1b4a2465d21f83a153379c97.js",
+    "service-worker.js": "/emanuel-boukris-26-02-2020/service-worker.js",
+    "static/css/2.38c9a507.chunk.css.map": "/emanuel-boukris-26-02-2020/static/css/2.38c9a507.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/emanuel-boukris-26-02-2020/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.05d2d477.chunk.js.LICENSE.txt": "/emanuel-boukris-26-02-2020/static/js/2.05d2d477.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e583ef6.js",
+    "static/css/2.38c9a507.chunk.css",
+    "static/js/2.05d2d477.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.4f173fbc.chunk.js"
+  ]
+}
