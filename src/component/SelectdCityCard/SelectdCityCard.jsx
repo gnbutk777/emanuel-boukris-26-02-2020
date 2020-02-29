@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import { useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
+import  ModalContext from "../../hooks/ModalContext";
 import api from '../../api';
 
 const SelectdCityCard = ({selectedCity}) => {
     const [celsius, setcelsius] = useState(0);
     const [isLoading, setisLoading] = useState(true);
+    const {setModalData} = useContext(ModalContext);
     const {name, key} = selectedCity;
 
 
@@ -25,7 +27,7 @@ const SelectdCityCard = ({selectedCity}) => {
                 console.log('Fetch aborted');
             }
             else {
-                console.error('Uh oh, an error!', error);
+                setModalData(true, "error", error.message);
             }
         }
     };

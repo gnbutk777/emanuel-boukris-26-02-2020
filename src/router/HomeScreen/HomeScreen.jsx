@@ -7,8 +7,6 @@ import HomeCard from '../../component/HomeCard';
 const defaultCity = {name: 'tel-aviv', key: '215854'}
 
 const HomeScreen = (props) => {
-    //FIXME:
-    // const [selectedCity, setselectedCity] = useState(null);
     const [selectedCity, setselectedCity] = useState(defaultCity);
     return (
         <Container>

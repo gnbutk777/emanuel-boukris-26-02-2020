@@ -19,7 +19,7 @@ const FavoritesButton = ({cityKey, cityName, addCityToFavorites, removeCityFormF
 
     const handlePress = () => {
         if (isFill) {
-            removeCityFormFavorites(cityKey)
+            removeCityFormFavorites(cityKey);
         }
         else {
             addCityToFavorites({cityKey, cityName});

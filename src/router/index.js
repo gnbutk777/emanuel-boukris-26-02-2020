@@ -12,14 +12,14 @@ import routesName from './routes';
 
 const Routes = ({Header, Footer}) => {
     return (
-        <Router>
+        <Router >
             {Header}
             <Switch>
-                <Route path={routesName.Favorites}>
-                    <Favorites />
-                </Route>
                 <Route path={routesName.Home}>
                     <Home />
+                </Route>
+                <Route path={routesName.Favorites}>
+                    <Favorites />
                 </Route>
             </Switch>
             {Footer}

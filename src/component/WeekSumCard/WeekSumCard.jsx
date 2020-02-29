@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Row from 'react-bootstrap/Row';
 import OneDayForcast from '../OneDayForcast';
+import  ModalContext from "../../hooks/ModalContext";
 import api from '../../api';
-
 
 const WeekSumCard = ({selectedCityKey}) => {
     const [fiveDaysData, setFiveDaysData] = useState(() => {
         return new Array(5).fill({});
     });
     const [isLoading, setisLoading] = useState(true);
+    const {setModalData} = useContext(ModalContext);
 
     const getFiveDaysForecasts = async (locationKey, signal) => {
         try {
@@ -30,7 +31,7 @@ const WeekSumCard = ({selectedCityKey}) => {
                 console.log('Fetch aborted');
             }
             else {
-                console.error('Uh oh, an error!', error);
+                setModalData(true, "error", error.message);
             }
         }
     };

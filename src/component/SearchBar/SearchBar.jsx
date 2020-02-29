@@ -1,15 +1,17 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, useContext} from 'react';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import useDebounce from '../../hooks/useDebounce';
+import  ModalContext from "../../hooks/ModalContext";
 import api from '../../api';
 
 const SearchBar = ({onSelectCity}) => {
     const [options, setoptions] = useState([]);
     const [value, setvalue] = useState('');
      const debouncedSearchTerm = useDebounce(value, 250);
+     const {setModalData} = useContext(ModalContext);
 
      const getCities = async (oldValue, signal) => {
         try {
@@ -25,7 +27,7 @@ const SearchBar = ({onSelectCity}) => {
                 console.log('Fetch aborted');
             }
             else {
-                console.error('Uh oh, an error!', error);
+                setModalData(true, "error", error.message);
             }
         };
     }

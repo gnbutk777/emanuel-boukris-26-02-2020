@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Card } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
+import  ModalContext from "../../hooks/ModalContext";
 import api from '../../api';
 
 const FavoriteSingleCard = ({cityKey, cityName}) => {
     const [data, setData] = useState({});
     const [isLoading, setisLoading] = useState(true);
+    const {setModalData} = useContext(ModalContext);
 
     const getCurrConditions = async (currentKey,signal) => {
         try {
@@ -21,7 +23,7 @@ const FavoriteSingleCard = ({cityKey, cityName}) => {
                 console.log('Fetch aborted');
             }
             else {
-                console.error('Uh oh, an error!', error);
+                setModalData(true, "error", error.message);
             }
         }
     }  
