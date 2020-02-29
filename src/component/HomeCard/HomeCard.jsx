@@ -12,7 +12,7 @@ const HomeCard = ({selectedCity}) => {
             <Card>
                 <Row className="flex-column-reverse flex-sm-row m-2">
                     <SelectdCityCard selectedCity={selectedCity}/>
-                    <FavoritesButton selectedCityKey={selectedCity.key}/>
+                    <FavoritesButton cityKey={selectedCity.key} cityName={selectedCity.name}/>
                 </Row>
                 <WeekSumCard selectedCityKey={selectedCity.key}/>
             </Card>

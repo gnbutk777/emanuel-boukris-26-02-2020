@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import { connect } from 'react-redux';
-import {addToFavorites, removeFormFavorites} from './../../modules/favorites/actions'; 
 import Container from 'react-bootstrap/Container';
 import SearchBar from '../../component/SearchBar';
 import HomeCard from '../../component/HomeCard';
@@ -29,15 +27,5 @@ const HomeScreen = (props) => {
     )
 }
  
-const mapStateToProps = state => {
-    return {
-        favorites: state.favorites
-    };
-};
 
-const mapDispatchToProps = {
-    addToFavorites,
-    removeFormFavorites,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
+export default HomeScreen;

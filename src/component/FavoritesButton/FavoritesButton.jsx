@@ -9,19 +9,20 @@ const text = {
     remove: "Remove From Favorites"
 }
 
-const FavoritesButton = ({selectedCityKey, addCityToFavorites, removeCityFormFavorites}) => {
+const FavoritesButton = ({cityKey, cityName, addCityToFavorites, removeCityFormFavorites}) => {
     const isFill = useSelector((state) => {
         const {favorites} = state;
-        
-        return favorites.includes(selectedCityKey); 
+        return favorites.some((favorite) => {
+            return favorite.cityKey === cityKey;
+        })
     });
 
     const handlePress = () => {
         if (isFill) {
-            removeCityFormFavorites(selectedCityKey)
+            removeCityFormFavorites(cityKey)
         }
         else {
-            addCityToFavorites(selectedCityKey);
+            addCityToFavorites({cityKey, cityName});
         }
     }
 

@@ -4,18 +4,17 @@ import Row from 'react-bootstrap/Row';
 import FavoriteSingleCard from '../../component/FavoriteSingleCard';
 
 const FavoritesScreen = ({favorites}) => {
-    const [isLoading, setisLoading] = useState(true);
 
-    console.log("favorites = ",favorites);
-    
     return (
         <Row className="flex-column flex-sm-row align-self-center justify-content-center m-4">
             {
-                favorites.map((oneDayData, index)=> {
-                    const {day, temperature} = oneDayData;
-                    // const key = selectedCityKey + index;
-                    return <FavoriteSingleCard key={index} isLoading={isLoading} day={day} temperature={temperature}/>
-                })
+                favorites.length  === 0 ? 
+                    "You don't have any favorites yet"
+                :
+                    favorites.map((favorite)=> {
+                        const {cityKey, cityName} = favorite;
+                        return <FavoriteSingleCard key={cityKey} cityKey={cityKey} cityName={cityName}/>
+                    })
             }       
         </Row>
     )
