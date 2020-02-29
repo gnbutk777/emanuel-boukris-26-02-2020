@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/emanuel-boukris-26-02-2020/precache-manifest.58e3e90f1b4a2465d21f83a153379c97.js"
+  "/emanuel-boukris-26-02-2020/precache-manifest.4de168c474f83fa8eb5f0f63eecda4da.js"
 );
 
 self.addEventListener('message', (event) => {

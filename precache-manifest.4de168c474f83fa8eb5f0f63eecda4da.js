@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b927835e539a38f020bcf4e119d35f73",
+    "revision": "6c172526b7b0ff7da47daf56103858bf",
     "url": "/emanuel-boukris-26-02-2020/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/emanuel-boukris-26-02-2020/static/css/2.38c9a507.chunk.css"
   },
   {
-    "revision": "04e452f05dd626a09bd5",
+    "revision": "1ff4af35bebb0111cf75",
     "url": "/emanuel-boukris-26-02-2020/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/emanuel-boukris-26-02-2020/static/js/2.05d2d477.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "04e452f05dd626a09bd5",
-    "url": "/emanuel-boukris-26-02-2020/static/js/main.4f173fbc.chunk.js"
+    "revision": "1ff4af35bebb0111cf75",
+    "url": "/emanuel-boukris-26-02-2020/static/js/main.62acded0.chunk.js"
   },
   {
     "revision": "e84e776a60007cb2c045",
