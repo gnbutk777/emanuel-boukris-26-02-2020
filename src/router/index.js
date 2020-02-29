@@ -15,11 +15,11 @@ const Routes = ({Header, Footer}) => {
         <Router >
             {Header}
             <Switch>
-                <Route path={routesName.Home}>
-                    <Home />
-                </Route>
                 <Route path={routesName.Favorites}>
                     <Favorites />
+                </Route>
+                <Route path={routesName.Home}>
+                    <Home />
                 </Route>
             </Switch>
             {Footer}

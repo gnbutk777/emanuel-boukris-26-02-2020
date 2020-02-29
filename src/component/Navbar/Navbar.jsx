@@ -2,17 +2,17 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav';
 import { useHistory } from "react-router-dom";
-
+import routesName from '../../router/routes';
 
 const navConfigure = [
     {
         name: "Home",
-        eventKey: "home",
+        eventKey: routesName.Home,
         isDisable: false,
     },
     {
         name: "Favorites",
-        eventKey: "favorites",
+        eventKey: routesName.Favorites,
         isDisable: false,
     }
 ]
@@ -29,7 +29,7 @@ const CustomNavbar = () => {
         <Navbar  className="justify-content-between">
             <h5>Herolo weather task</h5>
             <Nav 
-                defaultActiveKey="home"
+                defaultActiveKey="/"
                 fill
                 variant="tabs"
                 className="mr-sm-2"
